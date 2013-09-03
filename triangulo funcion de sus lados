@@ -1,0 +1,25 @@
+
+// area en funcion de sus lados.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+using namespace std;
+
+
+int main(void)
+{float a ,b ,c ,s , p ;
+ cout << "Ingrese el lado A ";
+	 cin >> a;
+	 cout << "Ingrese el lado B ";
+	 cin >> b;
+	 cout << "Ingrese el lado C ";
+	 cin >> c; 
+	 p= (a+b+c)/2;
+	 s= sqrt (p *(p-a)*(p-b)*(p-c));
+	 cout << " El Area es"    << s; 
+
+	return 0;
+}
