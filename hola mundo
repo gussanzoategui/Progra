@@ -1,0 +1,15 @@
+// hoola.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std; 
+
+int main(void)
+
+{
+	cout <<"HOLA MUNDO";
+	getch();
+	return 0;
+}
