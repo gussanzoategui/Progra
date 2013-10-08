@@ -1,0 +1,58 @@
+// ejercicio 3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+int main()
+{ float A, pp, sp , tp ,nf ,np ,f , i , ff;
+cout<< " Ingrese numero de alumnos :";
+cin>> A;
+for (i=1; i<=A; i++)
+{cout<< "Ingrese Faltas del Alumno :" ;
+cin>> f;
+if ( f  10)
+{cout<< "Ingrese Nota Primer Parcial : ";
+cin>> pp;
+cout<< "Ingrese Nota Segundo Parcial :";
+cin>> sp;
+cout<< "Ingrese Nota Tercer Parcial :";
+cin>> tp;
+cout<< "Ingrese Nota Practica :";
+cin>> np;
+cout<<" Ingrese Nota Final :";
+cin>> ff;
+nf= ((pp+sp+tp)*0.13)+np + (ff*0.20);
+
+}
+else
+{
+	cout<< "Ingrese Nota Primer Parcial :";
+cin>> pp;
+cout<< "Ingrese Nota Segundo Parcial :";
+cin>> sp;
+cout<< "Ingrese Nota Tercer Parcial :";
+cin>> tp;
+cout<< "Ingrese Nota Practica :";
+cin>> np;
+cout<<" Ingrese Nota Final :";
+cin>> ff;
+nf= ((pp+sp+tp)*0.13)+np + (ff*0.20);
+
+}
+if (nf > 50)
+{
+	cout<< " \nEl ALumno Aprobo la Materia con :" << nf;
+}
+else 
+{
+	cout<< "\n El Alumno Reprobo la Materia con :" << nf;
+}
+}
+
+	return 0;
+}
+
