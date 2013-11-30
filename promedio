@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+
+
+int main ()
+{	int n,i;
+	float s=0, num, prom;
+	cout<< "Ingrese la cantidad de Numero : ";
+	cin>> n;
+	for (i=0;i<n;i++)
+	{cout<< "Ingrese el numero :";
+	cin>>num;
+	s=s+num;
+	}
+	prom=s/n;
+	cout<< "El promedio es: " << prom;
+        return 0;
+}
