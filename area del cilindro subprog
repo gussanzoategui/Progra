@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+float area (int lr , int h)
+{int a;
+float pi =3.1416;
+a=2*pi*r*(r+h);
+return a;
+}
+
+int main ()
+{	int h, r; float a;
+cout<< "Ingrese el radio :";
+cin>> r;
+cout<< "Ingrese la altura :";
+cin>> h;
+a= area (r, h);
+cout<< "El area es: "<<a <<" ";
+	
+
+}
