@@ -1,0 +1,18 @@
+#include "stdafx.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+int main ()
+{	int d; float i, c ,p;
+cout<< "Ingrese la cantidad : ";
+cin>> c;
+cout<< "Ingrese los dias : ";
+cin>> d;
+cout<< "Ingrese el % : ";
+cin>> p;
+p=p/100;
+i=c*p*(d/360);
+cout << "El interes simple es :" <<i ;
+return 0;
+}
