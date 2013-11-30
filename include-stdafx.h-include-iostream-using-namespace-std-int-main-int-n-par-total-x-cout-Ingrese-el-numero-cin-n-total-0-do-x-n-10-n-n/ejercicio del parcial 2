@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{int n , par, total,x;
+cout<< "Ingrese el numero: ";
+cin>>n;
+total=0;
+do 
+	{x=n%10;
+	n=n/10;
+	if(x%2==0)
+	{cout<< "impar: "<<x << "\n";
+	total=total+1;}
+	}
+	while (n!=0);
+	cout<< "el total de impares: "<< total << "\n";
+	return 0;
+}
