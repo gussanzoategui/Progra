@@ -1,0 +1,26 @@
+#include "stdafx.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+
+
+int main ()
+{float s , sb ,imp, ;
+imp=0;
+afp =0;
+cout<< "ingrese el Sueldo que gana :";
+cin >> s;
+cout<< "Ingrese sueldo base:";
+cin >> sb;
+if (s> 2*sb)
+{ imp =s * 0.13;
+cout << "Su impuesto es: \n" ;
+cout << imp; cout<< "\n";
+}
+else 
+{imp=0;
+ cout<< "Usted no tiene impuesto \n";
+}
+        return 0;
+}
