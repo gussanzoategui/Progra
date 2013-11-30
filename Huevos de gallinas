@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+    float G, H ,i, j, T, P, t, p, l;
+    t=0; p=0;
+   do 
+   {
+       cout<< "Numero de granjas : ";
+       cin >> G;
+   }
+    while (G <=0); // Validar un valor pertinente de numero de granja
+    for (i=1; i<=G;i++) // Ciclo repetitivo para las granjas
+    {
+   cout<< "Ingrese el promedio de huevos que pone una gallina :";
+   cin>> l;
+   cout<< "Ingrese el numero de huevos de la Granja No. " << i << ":" << "\n";
+      cin>> H;
+   for (j=1; j<=H; j++) // Ciclo repetitivo para cada huevo de la granja
+      {
+     do 
+      {
+     cout<< "Ingrese el tamaño del huevo No. " << j << ":" << "en cm \n";
+           cin>> T;
+      }
+      while ((T<=2) || (T>=10));
+        t=t+T;
+   }
+      P=((t/H)/l);
+      if (P>5)
+        p=5;
+      else 
+        p=4;
+      cout<< "Precio es :"; cout<< p; cout<< "\n";
+    }
+  
+
+    return 0;
+}
