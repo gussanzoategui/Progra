@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int main()
+{int n, i, a, b ,r , mcd, q;
+cout<< "Ingrese Numerador: ";
+cin>> a;
+cout<< "Ingrese Denominador: ";
+cin>> b;
+do
+{q=b;
+r=a%b;
+a=b;
+b=r;
+}
+while (r!=0);
+cout<<"EL MCD es: "<<a<< "\n";
+ return 0;
+}
