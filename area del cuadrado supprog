@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+int area (int l)
+{int a;
+a=l*l;
+return a;
+}
+
+int main ()
+{	int a, l;
+cout<< "Ingrese el lado :";
+cin>> l;
+a= area (l);
+cout<< "El area es: "<<a <<" ";
+	
+
+}
