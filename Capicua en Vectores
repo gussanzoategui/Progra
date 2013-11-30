@@ -1,0 +1,50 @@
+  #include <iostream>
+using namespace std;
+
+float leer_vector (float P1[], int n)
+{int i;
+    for (i=0;i<n;i++)
+    {cout<< "Introducir valor al vector P["<<i<<"] : ";
+        cin >> P1[i];
+    }
+}
+
+float llenar_vector (float P1[], int n,float P2 [])
+{
+    int i;
+    for (i=0;i<n;i++)
+    {
+        P2[i]=P1[n-1-i];
+    }
+}
+
+float comparar_vector (float P1[], int n,float P2 [])
+{
+    int i, band;
+    band = 0;
+    for (i=0;i<n;i++)
+    {
+
+        if (P2[i]!=P1[i])
+            band = 1;
+    }
+
+    return band;
+}
+
+int main ()
+{int n, band;
+    float P1 [100];
+    float P2 [100];
+    cout<< "Ingrese el tamanio del vector : ";
+    cin>>n;
+    leer_vector (P1, n);
+    llenar_vector (P1, n, P2);
+    band = comparar_vector (P1, n, P2);
+    if (band == 0)
+    {cout<< "\n Es un vector capicua "; }
+    else
+    {cout<< "\n El vector no es capicua " ;}
+    
+    return 0;
+}
