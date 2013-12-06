@@ -1,0 +1,200 @@
+// proyecto x.cpp : Defines the entry point for the console application.
+// proyecto.cpp: define el punto de entrada de la aplicación de consola.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+using namespace std;
+// Subprogramas
+void pausa(void)
+{printf("Para continuar pulsa ENTER\n");
+getchar();
+}
+// Este es la funcion de menu la hicimos para darle una mejor funcionalidad al programa
+void menu ()
+{cout<< "                MENU                \n";
+cout<< "-------------------------------------------\n";
+cout<<"1.- Calculo de una habitacion en particular \n";
+cout<<"2.- Calculo de una casa \n";
+cout<<"0.- Salir \n";
+}
+// Esta funcion calcula una habitacion en particular
+float hab (int n, float *s1, float *s3, float *s6)
+{float st1, st3, st6,a, l, h, ap, tv=0, av=0, p=1.89, lv, al6=0.0434, al=0.0196, al3=0.0322, c ,c6, c3, at , hv, p1, p3, p6,ctor,np=1,ptor=0,par,ar; int v;
+	st1=0; st3=0;st6=0;
+	for(int j=1;j<=n;j++)
+{cout<< "\nIngrese el largo de la habitacion : ";
+cin>> l;
+cout<< "Ingrese el ancho de la habitacion : ";
+cin>>h;
+cout<< "Ingrese la altura que desea su pared : ";
+cin>>a;
+cout<< "Ingrese cuantas ventanas quiere : ";
+cin>>v;
+if (v>0 && v <3)
+{for(int i=1;i<=v;i++)
+{cout<< "Ingrese las dimensiones de la ventana (Largo) ("<<i <<") :";
+cin>>lv;
+cout<< "Ingrese las dimensiones de la ventana (Ancho) ("<<i <<") :";
+cin>>hv;
+if (lv<l && av<h)
+{av=lv*hv;
+tv=tv+av;}
+else 
+{cout<< "Error las ventanas son mas grandes que la pared \n";pausa();system("cls"); menu();}
+}
+}
+else 
+{cout<< "Error no pueden existir tantas ventanas \n";pausa();system("cls"); menu();}
+ctor=9*np;
+ptor=np*3;
+ar=ctor;
+par=ar*0.50;
+ap=(l*a)*2+(h*a)*2;
+at=ap-tv-p;
+c6=at/al6;
+cout<< "\nSe necesitaran " << c6 << " Ladrillos de 6 huecos \n";
+p6=c6*1;
+cout<< "El precio de los ladrillos de 6 huecos le saldra : "<< p6 <<"Bs. \n";
+float n6=c6/325;float pc6=n6*56;
+cout<<"Se necesitaran " << n6 << " Bolsas de cemento \n";
+cout<< "+  El precio del cemento : " << pc6 << "Bs. \n ";
+cout<<"se necesitaran : "<<ctor<< " Tornillos y costara : "<<ptor<< "\n";
+cout<<"se necesitaran : "<<ar<< " Arandela y costara : "<<par<< "\n";
+float pt6=p6+pc6+ptor+par;
+cout<< "El precio total de la habitacion con ladrillo de 6 huecos es de : " <<pt6 << "Bs. \n\n";
+c=at/al;
+cout<< "Se necesitaran " << c << " Ladrillos sin huecos \n";
+p1=c*1.7;
+cout<< "El precio de los ladrillos sin huecos le saldra : "<< p1 <<"Bs. \n";
+float n1=c/325;float pc1=n1*56;
+cout<<"Se necesitaran " << n1 << " Bolsas de cemento \n";
+cout<< "+  El precio del cemento : " << pc1 << " Bs. \n ";
+cout<<"se necesitaran : "<<ctor<< " Tornillos y costara : "<<ptor<< "\n";
+cout<<"se necesitaran : "<<ar<< " Arandela y costara : "<<par<< "\n";
+float pt1=p1+pc1+ptor+par;
+cout<< "El precio total de la habitacion con ladrillo sin huecos es de : " <<pt1 << "Bs. \n\n";
+c3=at/al3;
+cout<< "Se necesitaran " << c3 << " Ladrillos de 3 huecos \n";
+p3=c3*0.7;
+cout<< "El precio de los ladrillos de 3 huecos le saldra : " << p3 <<"Bs. \n";
+float n3=c3/325;float pc3=n3*56;
+cout<<"Se necesitaran " << n3 << " Bolsas de cemento \n";
+cout<< "+  El precio del cemento : " << pc3 << " Bs. \n ";
+cout<<"se necesitaran : "<<ctor<< " Tornillos y costara : "<<ptor<< "\n";
+cout<<"se necesitaran : "<<ar<< " Arandela y costara : "<<par<< "\n";
+float pt3=p3+pc3+ptor+par;
+cout<< "El precio total de la habitacion con ladrillo de 3 huecos es de : " <<pt3 << "Bs. \n\n";
+st1=st1+pt1; st3=st3+pt3; st6=st6+pt6; *s1=st1 ;*s3=st3; *s6=st6;
+}return 0;}
+// Esta funcion calcula la sala o cocina (que esta dentro de la funcion de casa) 
+float coc (int n, float *s1, float *s3, float *s6)
+{float st1, st3, st6,a, l, h, ap, tv=0, av=0, p=1.89, lv, al6=0.0434, al=0.0196, al3=0.0322, c ,c6, c3, at , hv, p1, p3, p6,ctor,np=1,ptor=0,par,ar; int v;
+	st1=0; st3=0;st6=0;
+	for(int j=1;j<=n;j++)
+{cout<< "\nIngrese el largo de la sala o cocina : ";
+cin>> l;
+cout<< "Ingrese el ancho de la sala o cocina : ";
+cin>>h;
+cout<< "Ingrese la altura que desea su pared : ";
+cin>>a;
+cout<< "Ingrese cuantas ventanas quiere : ";
+cin>>v;
+if (v>0 && v <3)
+{for(int i=1;i<=v;i++)
+{cout<< "Ingrese las dimensiones de la ventana (Largo) ("<<i <<") :";
+cin>>lv;
+cout<< "Ingrese las dimensiones de la ventana (Ancho) ("<<i <<") :";
+cin>>hv;
+if (lv<l && av<h)
+{av=lv*hv;
+tv=tv+av;}
+else 
+{cout<< "Error las ventanas son mas grandes que la pared \n";pausa();system("cls"); menu();}
+}
+}
+else 
+{cout<< "Error no pueden existir tantas ventanas \n";pausa();system("cls"); menu();}
+ctor=9*np;
+ptor=np*3;
+ar=ctor;
+par=ar*0.50;
+ap=(l*a)*2+(h*a)*2;
+at=ap-tv-p;
+c6=at/al6;
+cout<< "\nSe necesitaran " << c6 << " Ladrillos de 6 huecos \n";
+p6=c6*1;
+cout<< "El precio de los ladrillos de 6 huecos le saldra : "<< p6 <<"Bs. \n";
+float n6=c6/325;float pc6=n6*56;
+cout<<"Se necesitaran " << n6 << " Bolsas de cemento \n";
+cout<< "+  El precio del cemento : " << pc6 << "Bs. \n ";
+cout<<"se necesitaran : "<<ctor<< " Tornillos y costara : "<<ptor<< "\n";
+cout<<"se necesitaran : "<<ar<< " Arandela y costara : "<<par<< "\n";
+float pt6=p6+pc6+ptor+par;
+cout<< "El precio total de la sala o cocina con ladrillo de 6 huecos es de : " <<pt6 << "Bs. \n\n";
+c=at/al;
+cout<< "Se necesitaran " << c << " Ladrillos sin huecos \n";
+p1=c*1.7;
+cout<< "El precio de los ladrillos sin huecos le saldra : "<< p1 <<"Bs. \n";
+float n1=c/325;float pc1=n1*56;
+cout<<"Se necesitaran " << n1 << " Bolsas de cemento \n";
+cout<< "+  El precio del cemento : " << pc1 << " Bs. \n ";
+cout<<"se necesitaran : "<<ctor<< " Tornillos y costara : "<<ptor<< "\n";
+cout<<"se necesitaran : "<<ar<< " Arandela y costara : "<<par<< "\n";
+float pt1=p1+pc1+ptor+par;
+cout<< "El precio total de la sala o cocina con ladrillo sin huecos es de : " <<pt1 << "Bs. \n\n";
+c3=at/al3;
+cout<< "Se necesitaran " << c3 << " Ladrillos de 3 huecos \n";
+p3=c3*0.7;
+cout<< "El precio de los ladrillos de 3 huecos le saldra : " << p3 <<"Bs. \n";
+float n3=c3/325;float pc3=n3*56;
+cout<<"Se necesitaran " << n3 << " Bolsas de cemento \n";
+cout<< "+  El precio del cemento : " << pc3 << " Bs. \n ";
+cout<<"se necesitaran : "<<ctor<< " Tornillos y costara : "<<ptor<< "\n";
+cout<<"se necesitaran : "<<ar<< " Arandela y costara : "<<par<< "\n";
+float pt3=p3+pc3+ptor+par;
+cout<< "El precio total de la sala o cocina con ladrillo de 3 huecos es de : " <<pt3 << "Bs. \n\n";
+st1=st1+pt1; st3=st3+pt3; st6=st6+pt6; *s1=st1 ; *s3=st3; *s6=st6;
+}return 0;}
+// Con esta funcion calculamos los datos de la casa
+void casa()
+{int nh , n=1; float s1, s3, s6, sc1, sc3, sc6, ss1, ss3, ss6, st1, st3, st6;
+cout<< "Ingrese el numero de habitaciones: ";
+cin>>nh;
+hab (nh, &s1, &s3, &s6);
+coc (n, &sc1, &sc3, &sc6);
+coc (n, &ss1, &ss3, &ss6);
+st1=s1+sc1+ss1;
+cout<< "Le costara un total de: "<<st1 << "Bs. con ladrillos sin huecos \n"; 
+st3=s3+sc3+ss3;
+cout<< "Le costara un total de: "<<st3 << "Bs. con ladrillos con 3 huecos \n"; 
+st6=s6+sc6+ss6;
+cout<< "Le costara un total de: "<<st6 << "Bs. con ladrillos con 6 huecos \n"; 
+system ("pause");pausa();system("cls");}
+// Este es el programa principal
+void main()
+{int op, n=1; float s1=0, s3=0, s6=0;
+system("color f8");
+menu();
+cout<< "Opcion: ";
+cin>> op;
+do
+{switch (op)
+{case 1 : 
+	{hab(n, &s1, &s3, &s6);
+	system ("pause");pausa();system("cls");
+	}
+	break;
+case 2:
+	{casa ();
+	system ("pause");pausa();system("cls");
+	}
+	break;
+   default:printf("ingrese opcion correcta\n");
+}
+        printf("\n\n");
+        menu();
+    scanf_s("%d",&op);
+}while (op !=0);}
